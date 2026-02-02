@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Martha! My Beautiful Star ✨</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ffcce6 0%, #ff99cc 25%, #cc99ff 50%, #99ccff 75%, #cce6ff 100%);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #333;
+            overflow-x: hidden;
+            min-height: 100vh;
+            padding: 0;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Header Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('martha1.jpg') center/cover;
+            opacity: 0.15;
+            z-index: -1;
+        }
+        
+        .hero-content h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5.5rem;
+            color: #ff3366;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+            animation: floatText 4s ease-in-out infinite;
+        }
+        
+        @keyframes floatText {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .birthday-star {
+            font-size: 4rem;
+            color: gold;
+            margin: 20px 0;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+            animation: spin 10s linear infinite, glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            to { text-shadow: 0 0 30px rgba(255, 215, 0, 1), 0 0 40px rgba(255, 215, 0, 0.8); }
+        }
+        
+        /* Slideshow Section */
+        .slideshow-section {
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            text-align: center;
+            color: #ff3366;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(to right, #ff3366, #ff9966);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+        
+        .slideshow-container {
+            max-width: 900px;
+            height: 500px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .slides {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            transform: translateY(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .slideshow-container:hover .slide-caption {
+            transform: translateY(0);
+        }
+        
+        .slide-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            color: #ff3366;
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .slide-nav:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .prev-slide {
+            left: 20px;
+        }
+        
+        .next-slide {
+            right: 20px;
+        }
+        
+        .slide-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+        
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: #ff3366;
+            transform: scale(1.3);
+        }
+        
+        /* Quiz/Surprise Section */
+        .surprise-section {
+            padding: 80px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            text-align: center;
+        }
+        
+        .surprise-intro {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .surprise-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .surprise-box {
+            width: 300px;
+            height: 300px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        
+        .present-box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+        }
+        
+        .present-box.opened {
+            transform: rotateY(180deg);
+        }
+        
+        .present-front, .present-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .present-front {
+            background: linear-gradient(135deg, #ff3366, #ff9966);
+            color: white;
+        }
+        
+        .present-back {
+            background: linear-gradient(135deg, #99ccff, #cc99ff);
+            color: #333;
+            transform: rotateY(180deg);
+            overflow-y: auto;
+        }
+        
+        .gift-icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .question {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        .answer {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ff3366;
+            border-radius: 50%;
+            opacity: 0;
+        }
+        
+        /* Love Messages */
+        .love-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #ffcce6 0%, #ff99cc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .love-section::before {
+            content: "❤";
+            position: absolute;
+            font-size: 30rem;
+            color: rgba(255, 255, 255, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+        
+        .love-messages {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .love-note {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 1s ease;
+        }
+        
+        .love-note.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .love-note h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ff3366;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .love-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .heart-divider {
+            text-align: center;
+            font-size: 2rem;
+            color: #ff3366;
+            margin: 20px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        /* Birthday Wishes */
+        .wishes-section {
+            padding: 100px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #99ccff 0%, #cc99ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cake-container {
+            font-size: 8rem;
+            margin: 40px 0;
+            animation: floatCake 5s ease-in-out infinite;
+        }
+        
+        @keyframes floatCake {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+        
+        .birthday-wish {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            color: #ff3366;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .wishes-text {
+            font-size: 1.6rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        .final-hearts {
+            font-size: 3rem;
+            letter-spacing: 20px;
+            color: #ff3366;
+            margin: 30px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+        
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+        }
+        
+        .footer-text {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50px;
+            padding: 15px 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .music-info {
+            font-size: 0.9rem;
+            color: #ff3366;
+            font-weight: 600;
+        }
+        
+        .play-btn {
+            background: #ff3366;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            background: #ff0040;
+            transform: scale(1.1);
+        }
+        
+        .volume-slider {
+            width: 100px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+            
+            .slideshow-container {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+            }
+            
+            .slideshow-container {
+                height: 300px;
+            }
+            
+            .surprise-box {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .birthday-wish {
+                font-size: 2.8rem;
+            }
+            
+            .music-player {
+                bottom: 10px;
+                right: 10px;
+                padding: 10px 15px;
+            }
+            
+            .volume-slider {
+                width: 70px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .slideshow-container {
+                height: 250px;
+            }
+            
+            .slide-caption {
+                font-size: 1rem;
+                padding: 10px;
+            }
+            
+            .surprise-box {
+                width: 100%;
+                max-width: 300px;
+                height: 300px;
+            }
+            
+            .love-text {
+                font-size: 1.2rem;
+            }
+            
+            .birthday-wish {
+                font-size: 2.2rem;
+            }
+            
+            .music-player {
+                flex-direction: column;
+                width: 60px;
+                padding: 10px;
+            }
+            
+            .music-info, .volume-slider {
+                display: none;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player">
+        <div class="music-info">Martha's Birthday Song</div>
+        <button class="play-btn" id="playBtn">
+            <i class="fas fa-play"></i>
+        </button>
+        <input type="range" min="0" max="100" value="70" class="volume-slider" id="volumeSlider">
+        <audio id="birthdaySong" loop>
+            <!-- Add your song file here -->
+            <!-- <source src="martha-birthday-song.mp3" type="audio/mpeg"> -->
+            <!-- For demo, using a placeholder -->
+            <source src="Kirorerwa.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Happy Birthday, Martha! ✨</h1>
+            <div class="birthday-star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="hero-subtitle">My beautiful star, today is your special day and I'm the luckiest person in the world to have you in my life. I've never felt with anyone the way I feel with you.</p>
+            <p class="hero-subtitle">Scroll down for surprises filled with love just for you...</p>
+        </div>
+    </section>
+    
+    <!-- Slideshow Section -->
+    <section class="slideshow-section">
+        <h2 class="section-title">My Beautiful Martha</h2>
+        <div class="slideshow-container">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beautiful Martha">
+                    <div class="slide-caption">That smile that brightens my world every day</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Martha laughing">
+                    <div class="slide-caption">Your joyful laughter is my favorite sound</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Martha being thoughtful">
+                    <div class="slide-caption">The way you care for others inspires me</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Martha adventuring">
+                    <div class="slide-caption">Every adventure with you is magical</div>
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Martha shining">
+                    <div class="slide-caption">You shine brighter than any star in the sky</div>
+                </div>
+            </div>
+            <button class="slide-nav prev-slide">&#10094;</button>
+            <button class="slide-nav next-slide">&#10095;</button>
+        </div>
+        <div class="slide-dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+            <div class="dot" data-slide="3"></div>
+            <div class="dot" data-slide="4"></div>
+        </div>
+        <p style="text-align: center; margin-top: 30px; font-style: italic; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">(Replace these images with your actual photos of Martha for a truly personal experience!)</p>
+    </section>
+    
+    <!-- Surprise Boxes Section -->
+    <section class="surprise-section">
+        <h2 class="section-title">Surprise Boxes of Love</h2>
+        <p class="surprise-intro">Click on each gift box to discover special messages about how much you mean to me. Each box holds a piece of my heart just for you!</p>
+        
+        <div class="surprise-container">
+            <!-- Surprise Box 1 -->
+            <div class="surprise-box">
+                <div class="present-box" id="present1">
+                    <div class="present-front">
+                        <div class="gift-icon">🎁</div>
+                        <div class="question">What makes you the most special person in my life?</div>
+                        <p style="margin-top: 20px;"><i>Click to open!</i></p>
+                    </div>
+                    <div class="present-back">
+                        <div class="answer">
+                            <h3>Your Incredible Heart</h3>
+                            <p>It's your kindness, compassion, and the way you love with your whole heart. You have the most beautiful soul I've ever known, and every day with you makes me a better person.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Surprise Box 2 -->
+            <div class="surprise-box">
+                <div class="present-box" id="present2">
+                    <div class="present-front">
+                        <div class="gift-icon">🎁</div>
+                        <div class="question">What do I love most about our relationship?</div>
+                        <p style="margin-top: 20px;"><i>Click to open!</i></p>
+                    </div>
+                    <div class="present-back">
+                        <div class="answer">
+                            <h3>The Unique Connection</h3>
+                            <p>I've never felt with anyone the way I feel with you. It's like we're two puzzle pieces that fit perfectly together. Our connection is something rare and beautiful that I'll cherish forever.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Surprise Box 3 -->
+            <div class="surprise-box">
+                <div class="present-box" id="present3">
+                    <div class="present-front">
+                        <div class="gift-icon">🎁</div>
+                        <div class="question">My birthday wish for you today is...</div>
+                        <p style="margin-top: 20px;"><i>Click to open!</i></p>
+                    </div>
+                    <div class="present-back">
+                        <div class="answer">
+                            <h3>All Your Dreams Coming True</h3>
+                            <p>I wish for you to enjoy all your birthdays as we share our relationship. May this year bring you endless joy, success in all you do, and may all your dreams come true, my beautiful star!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Love Messages -->
+    <section class="love-section">
+        <h2 class="section-title">My Heart's Messages</h2>
+        <div class="love-messages">
+            <div class="love-note fade-in">
+                <h3>My Dearest Martha</h3>
+                <p class="love-text">From the moment you came into my life, everything changed. Colors became brighter, laughter became sweeter, and every day became an adventure worth cherishing.</p>
+                <p class="love-text">You are the most beautiful person I've ever known - inside and out. Your smile can light up the darkest room, and your kindness touches everyone around you.</p>
+            </div>
+            
+            <div class="heart-divider">❤️</div>
+            
+            <div class="love-note fade-in">
+                <h3>My Promise to You</h3>
+                <p class="love-text">I promise to cherish you every single day, to support your dreams, to laugh with you in joy and hold you in sorrow, to build a beautiful future together.</p>
+                <p class="love-text">I promise to love you more with each passing day, to be your safe place, your biggest fan, and your partner in all of life's adventures.</p>
+            </div>
+            
+            <div class="heart-divider">❤️</div>
+            
+            <div class="love-note fade-in">
+                <h3>My Beautiful Star</h3>
+                <p class="love-text">You are my star, my light in the darkness, my guide when I'm lost. With you by my side, I feel like I can conquer anything life throws our way.</p>
+                <p class="love-text">Thank you for being you - for your strength, your wisdom, your laughter, and your incredible heart. I'm the luckiest person in the world to call you mine.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Birthday Wishes -->
+    <section class="wishes-section">
+        <h2 class="section-title">Happy Birthday Wishes!</h2>
+        <div class="cake-container">
+            🎂 🎉 🥳 ✨
+        </div>
+        <h3 class="birthday-wish">Happy Turnings, My Love!</h3>
+        <p class="wishes-text">May this year be filled with magical moments, incredible adventures, and dreams coming true. May you always know how deeply loved and appreciated you are, not just today but every single day.</p>
+        <p class="wishes-text">I can't wait to celebrate all your future birthdays with you, creating memories that will last a lifetime. Here's to you, Martha - the most amazing woman I know!</p>
+        
+        <div class="final-hearts">
+            ❤️ ❤️ ❤️
+        </div>
+        
+        <p style="font-size: 1.5rem; color: #ff3366; margin-top: 30px;">With all my love, forever and always</p>
+    </section>
+    
+    <footer>
+        <p class="footer-text">Made with infinite love for Martha on her special day</p>
+        <p class="footer-text">© A birthday surprise from the luckiest person in the world</p>
+    </footer>
+
+    <script>
+        // Music Player
+        const birthdaySong = document.getElementById('birthdaySong');
+        const playBtn = document.getElementById('playBtn');
+        const volumeSlider = document.getElementById('volumeSlider');
+        let isPlaying = false;
+        
+        // Auto-play music when page loads (with user interaction requirement)
+        document.addEventListener('click', function initAudio() {
+            if (!isPlaying) {
+                birthdaySong.volume = volumeSlider.value / 100;
+                birthdaySong.play().then(() => {
+                    isPlaying = true;
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }).catch(e => {
+                    console.log("Auto-play was prevented:", e);
+                });
+            }
+            document.removeEventListener('click', initAudio);
+        }, { once: true });
+        
+        playBtn.addEventListener('click', function() {
+            if (isPlaying) {
+                birthdaySong.pause();
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+            } else {
+                birthdaySong.play();
+                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+        
+        volumeSlider.addEventListener('input', function() {
+            birthdaySong.volume = this.value / 100;
+        });
+        
+        // Slideshow functionality
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        const prevBtn = document.querySelector('.prev-slide');
+        const nextBtn = document.querySelector('.next-slide');
+        let currentSlide = 0;
+        
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            // Show current slide
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentSlide = index;
+        }
+        
+        function nextSlide() {
+            let nextIndex = currentSlide + 1;
+            if (nextIndex >= slides.length) nextIndex = 0;
+            showSlide(nextIndex);
+        }
+        
+        function prevSlide() {
+            let prevIndex = currentSlide - 1;
+            if (prevIndex < 0) prevIndex = slides.length - 1;
+            showSlide(prevIndex);
+        }
+        
+        // Auto-advance slides
+        setInterval(nextSlide, 5000);
+        
+        // Event listeners for slideshow controls
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                const slideIndex = parseInt(this.getAttribute('data-slide'));
+                showSlide(slideIndex);
+            });
+        });
+        
+        // Surprise boxes functionality
+        const presents = document.querySelectorAll('.present-box');
+        
+        presents.forEach(present => {
+            present.addEventListener('click', function() {
+                // Create confetti effect
+                createConfetti(this);
+                
+                // Toggle the opened class
+                this.classList.toggle('opened');
+                
+                // Play a sound if the box is being opened
+                if (this.classList.contains('opened')) {
+                    playOpenSound();
+                }
+            });
+        });
+        
+        function createConfetti(element) {
+            const rect = element.getBoundingClientRect();
+            const colors = ['#ff3366', '#ff9966', '#99ccff', '#cc99ff', '#ffcc00'];
+            
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${rect.left + rect.width / 2}px`;
+                confetti.style.top = `${rect.top + rect.height / 2}px`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                document.body.appendChild(confetti);
+                
+                // Animate confetti
+                const angle = Math.random() * Math.PI * 2;
+                const velocity = 2 + Math.random() * 3;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                let posX = rect.left + rect.width / 2;
+                let posY = rect.top + rect.height / 2;
+                let opacity = 1;
+                
+                const animateConfetti = () => {
+                    posX += vx;
+                    posY += vy;
+                    opacity -= 0.02;
+                    
+                    confetti.style.left = `${posX}px`;
+                    confetti.style.top = `${posY}px`;
+                    confetti.style.opacity = opacity;
+                    
+                    if (opacity > 0) {
+                        requestAnimationFrame(animateConfetti);
+                    } else {
+                        confetti.remove();
+                    }
+                };
+                
+                requestAnimationFrame(animateConfetti);
+            }
+        }
+        
+        function playOpenSound() {
+            // Create a simple sound for opening the present
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
+            oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
+            oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.2); // G5
+            
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.5);
+        }
+        
+        // Scroll animations for love notes
+        const loveNotes = document.querySelectorAll('.love-note');
+        
+        function checkScroll() {
+            loveNotes.forEach(note => {
+                const noteTop = note.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (noteTop < windowHeight * 0.85) {
+                    note.classList.add('visible');
+                }
+            });
+            
+            // Also check for fade-in elements
+            const fadeIns = document.querySelectorAll('.fade-in');
+            fadeIns.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight * 0.85) {
+                    element.classList.add('visible');
+                }
+            });
+        }
+        
+        window.addEventListener('scroll', checkScroll);
+        window.addEventListener('load', checkScroll);
+        
+        // Create floating hearts occasionally
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.style.position = 'fixed';
+            heart.style.fontSize = Math.random() * 30 + 20 + 'px';
+            heart.style.color = '#ff3366';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.opacity = Math.random() * 0.5 + 0.3;
+            heart.style.zIndex = '-1';
+            heart.style.pointerEvents = 'none';
+            heart.style.filter = `blur(${Math.random() * 3}px)`;
+            document.body.appendChild(heart);
+            
+            // Animate heart floating up
+            const animation = heart.animate([
+                { transform: 'translateY(0) rotate(0deg)', opacity: heart.style.opacity },
+                { transform: `translateY(-${window.innerHeight + 200}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+            ], {
+                duration: Math.random() * 5000 + 5000,
+                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+            });
+            
+            // Remove heart after animation completes
+            animation.onfinish = () => {
+                heart.remove();
+            };
+        }
+        
+        // Create floating hearts every few seconds
+        setInterval(createFloatingHeart, 2000);
+        
+        // Create initial hearts
+        for (let i = 0; i < 10; i++) {
+            setTimeout(createFloatingHeart, i * 500);
+        }
+        
+        // Instructions for personalization
+        console.log("=== INSTRUCTIONS FOR PERSONALIZATION ===");
+        console.log("1. Replace the images in the slideshow with actual photos of Martha");
+        console.log("2. Replace the music source with your actual song for Martha");
+        console.log("3. Customize the messages to make them even more personal");
+        console.log("4. To add your song: Replace the <audio> source with your song file URL");
+    </script>
+</body>
+</html>
