@@ -232,7 +232,7 @@
             transform: scale(1.3);
         }
         
-        /* Quiz/Surprise Section */
+        /* Surprise Boxes Section */
         .surprise-section {
             padding: 80px 20px;
             background: rgba(255, 255, 255, 0.9);
@@ -261,6 +261,11 @@
             height: 300px;
             perspective: 1000px;
             cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+        
+        .surprise-box:hover {
+            transform: scale(1.05);
         }
         
         .present-box {
@@ -268,11 +273,11 @@
             height: 100%;
             position: relative;
             transform-style: preserve-3d;
-            transition: transform 0.8s;
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
         
         .present-box.opened {
-            transform: rotateY(180deg);
+            transform: rotateY(180deg) scale(0.8);
         }
         
         .present-front, .present-back {
@@ -316,6 +321,7 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 20px;
+            text-align: center;
         }
         
         .answer {
@@ -323,13 +329,113 @@
             line-height: 1.6;
         }
         
+        /* Modal for gift box content */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            width: 90%;
+            max-width: 700px;
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            transform: scale(0.7) translateY(50px);
+            opacity: 0;
+            transition: all 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .modal-overlay.active .modal-content {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        
+        .modal-content::before {
+            content: "❤";
+            position: absolute;
+            font-size: 20rem;
+            color: rgba(255, 255, 255, 0.1);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+        
+        .modal-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .modal-header h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #ff3366;
+            margin-bottom: 15px;
+        }
+        
+        .modal-body {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #333;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: #ff3366;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: #ff0040;
+            transform: rotate(90deg);
+        }
+        
         .confetti {
             position: absolute;
-            width: 10px;
-            height: 10px;
-            background: #ff3366;
+            width: 15px;
+            height: 15px;
             border-radius: 50%;
             opacity: 0;
+            z-index: 1001;
         }
         
         /* Love Messages */
@@ -484,6 +590,7 @@
             font-size: 0.9rem;
             color: #ff3366;
             font-weight: 600;
+            white-space: nowrap;
         }
         
         .play-btn {
@@ -543,6 +650,19 @@
                 height: 250px;
             }
             
+            .modal-content {
+                padding: 30px;
+                width: 95%;
+            }
+            
+            .modal-header h2 {
+                font-size: 2.8rem;
+            }
+            
+            .modal-body {
+                font-size: 1.2rem;
+            }
+            
             .birthday-wish {
                 font-size: 2.8rem;
             }
@@ -587,6 +707,19 @@
                 height: 300px;
             }
             
+            .modal-content {
+                padding: 20px;
+            }
+            
+            .modal-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .modal-body {
+                font-size: 1.1rem;
+                padding: 15px;
+            }
+            
             .love-text {
                 font-size: 1.2rem;
             }
@@ -597,12 +730,12 @@
             
             .music-player {
                 flex-direction: column;
-                width: 60px;
-                padding: 10px;
+                width: auto;
+                padding: 10px 15px;
             }
             
-            .music-info, .volume-slider {
-                display: none;
+            .volume-slider {
+                width: 80px;
             }
         }
         
@@ -620,6 +753,19 @@
     </style>
 </head>
 <body>
+    <!-- Modal for gift box content -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Your Special Message</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+    
     <!-- Music Player -->
     <div class="music-player">
         <div class="music-info">Martha's Birthday Song</div>
@@ -629,8 +775,6 @@
         <input type="range" min="0" max="100" value="70" class="volume-slider" id="volumeSlider">
         <audio id="birthdaySong" loop>
             <!-- Add your song file here -->
-            <!-- <source src="martha-birthday-song.mp3" type="audio/mpeg"> -->
-            <!-- For demo, using a placeholder -->
             <source src="Kirorerwa.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
@@ -656,23 +800,23 @@
         <div class="slideshow-container">
             <div class="slides">
                 <div class="slide active">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Beautiful Martha">
+                    <img src="martha1.jpg" alt="Beautiful Martha">
                     <div class="slide-caption">That smile that brightens my world every day</div>
                 </div>
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Martha laughing">
+                    <img src="martha2.jpg" alt="Martha laughing">
                     <div class="slide-caption">Your joyful laughter is my favorite sound</div>
                 </div>
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1520813792240-56fc4a3765a7?ixlib=rb-1.2.1&auto=format&fit=crop&w-1350&q=80" alt="Martha being thoughtful">
+                    <img src="martha3.jpg" alt="Martha being thoughtful">
                     <div class="slide-caption">The way you care for others inspires me</div>
                 </div>
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1519058082700-08a0b56da9b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Martha adventuring">
+                    <img src="martha4.jpg" alt="Martha adventuring">
                     <div class="slide-caption">Every adventure with you is magical</div>
                 </div>
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Martha shining">
+                    <img src="martha5.jpg" alt="Martha shining">
                     <div class="slide-caption">You shine brighter than any star in the sky</div>
                 </div>
             </div>
@@ -686,7 +830,6 @@
             <div class="dot" data-slide="3"></div>
             <div class="dot" data-slide="4"></div>
         </div>
-        <p style="text-align: center; margin-top: 30px; font-style: italic; color: #666; max-width: 800px; margin-left: auto; margin-right: auto;">(Replace these images with your actual photos of Martha for a truly personal experience!)</p>
     </section>
     
     <!-- Surprise Boxes Section -->
@@ -697,7 +840,7 @@
         <div class="surprise-container">
             <!-- Surprise Box 1 -->
             <div class="surprise-box">
-                <div class="present-box" id="present1">
+                <div class="present-box" id="present1" data-box="1">
                     <div class="present-front">
                         <div class="gift-icon">🎁</div>
                         <div class="question">What makes you the most special person in my life?</div>
@@ -706,7 +849,7 @@
                     <div class="present-back">
                         <div class="answer">
                             <h3>Your Incredible Heart</h3>
-                            <p>It's your kindness, compassion, and the way you love with your whole heart. You have the most beautiful soul I've ever known, and every day with you makes me a better person.</p>
+                            <p>It's your kindness, compassion, and the way you love with your whole heart...</p>
                         </div>
                     </div>
                 </div>
@@ -714,7 +857,7 @@
             
             <!-- Surprise Box 2 -->
             <div class="surprise-box">
-                <div class="present-box" id="present2">
+                <div class="present-box" id="present2" data-box="2">
                     <div class="present-front">
                         <div class="gift-icon">🎁</div>
                         <div class="question">What do I love most about our relationship?</div>
@@ -723,7 +866,7 @@
                     <div class="present-back">
                         <div class="answer">
                             <h3>The Unique Connection</h3>
-                            <p>I've never felt with anyone the way I feel with you. It's like we're two puzzle pieces that fit perfectly together. Our connection is something rare and beautiful that I'll cherish forever.</p>
+                            <p>I've never felt with anyone the way I feel with you...</p>
                         </div>
                     </div>
                 </div>
@@ -731,7 +874,7 @@
             
             <!-- Surprise Box 3 -->
             <div class="surprise-box">
-                <div class="present-box" id="present3">
+                <div class="present-box" id="present3" data-box="3">
                     <div class="present-front">
                         <div class="gift-icon">🎁</div>
                         <div class="question">My birthday wish for you today is...</div>
@@ -740,7 +883,7 @@
                     <div class="present-back">
                         <div class="answer">
                             <h3>All Your Dreams Coming True</h3>
-                            <p>I wish for you to enjoy all your birthdays as we share our relationship. May this year bring you endless joy, success in all you do, and may all your dreams come true, my beautiful star!</p>
+                            <p>I wish for you to enjoy all your birthdays as we share our relationship...</p>
                         </div>
                     </div>
                 </div>
@@ -799,37 +942,51 @@
     </footer>
 
     <script>
-        // Music Player
+        // Music Player - Improved with better error handling
         const birthdaySong = document.getElementById('birthdaySong');
         const playBtn = document.getElementById('playBtn');
         const volumeSlider = document.getElementById('volumeSlider');
         let isPlaying = false;
         
-        // Auto-play music when page loads (with user interaction requirement)
-        document.addEventListener('click', function initAudio() {
-            if (!isPlaying) {
-                birthdaySong.volume = volumeSlider.value / 100;
-                birthdaySong.play().then(() => {
-                    isPlaying = true;
-                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
-                }).catch(e => {
-                    console.log("Auto-play was prevented:", e);
-                });
-            }
-            document.removeEventListener('click', initAudio);
-        }, { once: true });
+        // Set initial volume
+        birthdaySong.volume = volumeSlider.value / 100;
         
+        // Try to auto-play when page loads (with user interaction)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Try to play after a short delay and user interaction
+            setTimeout(() => {
+                document.addEventListener('click', function initAudio() {
+                    if (!isPlaying) {
+                        birthdaySong.play().then(() => {
+                            isPlaying = true;
+                            playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                            console.log("Music started playing");
+                        }).catch(e => {
+                            console.log("Auto-play was prevented. User needs to click play button:", e);
+                        });
+                    }
+                    document.removeEventListener('click', initAudio);
+                }, { once: true });
+            }, 1000);
+        });
+        
+        // Manual play/pause control
         playBtn.addEventListener('click', function() {
             if (isPlaying) {
                 birthdaySong.pause();
                 playBtn.innerHTML = '<i class="fas fa-play"></i>';
             } else {
-                birthdaySong.play();
-                playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                birthdaySong.play().then(() => {
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }).catch(e => {
+                    console.log("Playback failed:", e);
+                    alert("Please click the play button to start the music. Some browsers require user interaction.");
+                });
             }
             isPlaying = !isPlaying;
         });
         
+        // Volume control
         volumeSlider.addEventListener('input', function() {
             birthdaySong.volume = this.value / 100;
         });
@@ -840,6 +997,7 @@
         const prevBtn = document.querySelector('.prev-slide');
         const nextBtn = document.querySelector('.next-slide');
         let currentSlide = 0;
+        let slideInterval;
         
         function showSlide(index) {
             // Hide all slides
@@ -864,69 +1022,156 @@
             showSlide(prevIndex);
         }
         
-        // Auto-advance slides
-        setInterval(nextSlide, 5000);
+        // Start auto-advance slides
+        function startSlideShow() {
+            if (slideInterval) clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+        
+        startSlideShow();
         
         // Event listeners for slideshow controls
-        prevBtn.addEventListener('click', prevSlide);
-        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', function() {
+            prevSlide();
+            startSlideShow(); // Restart timer
+        });
+        
+        nextBtn.addEventListener('click', function() {
+            nextSlide();
+            startSlideShow(); // Restart timer
+        });
         
         dots.forEach(dot => {
             dot.addEventListener('click', function() {
                 const slideIndex = parseInt(this.getAttribute('data-slide'));
                 showSlide(slideIndex);
+                startSlideShow(); // Restart timer
             });
         });
         
-        // Surprise boxes functionality
+        // Surprise boxes with modal functionality
         const presents = document.querySelectorAll('.present-box');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+        
+        // Content for each gift box modal
+        const boxContents = {
+            1: {
+                title: "Your Incredible Heart",
+                content: `It's your kindness, compassion, and the way you love with your whole heart that makes you the most special person in my life. You have the most beautiful soul I've ever known, and every day with you makes me a better person.<br><br>
+                Your empathy for others, your unwavering support, and your ability to see the good in everyone - these qualities make you truly extraordinary. You're not just my girlfriend; you're my inspiration, my safe haven, and my greatest blessing.`
+            },
+            2: {
+                title: "Our Unique Connection",
+                content: `I've never felt with anyone the way I feel with you. It's like we're two puzzle pieces that fit perfectly together. Our connection is something rare and beautiful that I'll cherish forever.<br><br>
+                What I love most about our relationship is how we understand each other without words, how we laugh at the same silly things, and how we support each other's dreams. With you, I've found a love that feels like home - comfortable, safe, and filled with endless joy.`
+            },
+            3: {
+                title: "All Your Dreams Coming True",
+                content: `My birthday wish for you is to enjoy all your birthdays as we share our relationship. May this year bring you endless joy, success in all you do, and may all your dreams come true, my beautiful star!<br><br>
+                I wish for you to wake up every morning with a smile, to find happiness in the little moments, and to know how deeply loved you are. May this year be filled with adventures, laughter, and memories that we'll cherish forever. Here's to celebrating many more birthdays together!`
+            }
+        };
         
         presents.forEach(present => {
             present.addEventListener('click', function() {
+                const boxNumber = this.getAttribute('data-box');
+                
                 // Create confetti effect
                 createConfetti(this);
                 
-                // Toggle the opened class
+                // Toggle the opened class for the gift box
                 this.classList.toggle('opened');
                 
-                // Play a sound if the box is being opened
-                if (this.classList.contains('opened')) {
-                    playOpenSound();
-                }
+                // Play opening sound
+                playOpenSound();
+                
+                // Show the modal with content after a short delay
+                setTimeout(() => {
+                    showModal(boxNumber);
+                }, 800);
             });
         });
         
+        function showModal(boxNumber) {
+            // Set modal content based on box number
+            modalTitle.textContent = boxContents[boxNumber].title;
+            modalBody.innerHTML = boxContents[boxNumber].content;
+            
+            // Show modal with animation
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            
+            // Create extra confetti for modal opening
+            createModalConfetti();
+        }
+        
+        // Close modal
+        closeModal.addEventListener('click', function() {
+            closeModalFunction();
+        });
+        
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) {
+                closeModalFunction();
+            }
+        });
+        
+        function closeModalFunction() {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; // Re-enable scrolling
+            
+            // Reset all gift boxes to closed state
+            presents.forEach(present => {
+                present.classList.remove('opened');
+            });
+        }
+        
         function createConfetti(element) {
             const rect = element.getBoundingClientRect();
-            const colors = ['#ff3366', '#ff9966', '#99ccff', '#cc99ff', '#ffcc00'];
+            const colors = ['#ff3366', '#ff9966', '#99ccff', '#cc99ff', '#ffcc00', '#99ff99'];
             
-            for (let i = 0; i < 30; i++) {
+            for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 confetti.style.left = `${rect.left + rect.width / 2}px`;
                 confetti.style.top = `${rect.top + rect.height / 2}px`;
                 confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 15 + 5}px`;
+                confetti.style.height = confetti.style.width;
+                
+                // Random shape
+                if (Math.random() > 0.7) {
+                    confetti.style.borderRadius = '0';
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                }
                 
                 document.body.appendChild(confetti);
                 
                 // Animate confetti
                 const angle = Math.random() * Math.PI * 2;
-                const velocity = 2 + Math.random() * 3;
+                const velocity = 3 + Math.random() * 4;
                 const vx = Math.cos(angle) * velocity;
                 const vy = Math.sin(angle) * velocity;
                 
                 let posX = rect.left + rect.width / 2;
                 let posY = rect.top + rect.height / 2;
                 let opacity = 1;
+                let rotation = 0;
+                const rotationSpeed = Math.random() * 10 - 5;
                 
                 const animateConfetti = () => {
                     posX += vx;
                     posY += vy;
-                    opacity -= 0.02;
+                    opacity -= 0.015;
+                    rotation += rotationSpeed;
                     
                     confetti.style.left = `${posX}px`;
                     confetti.style.top = `${posY}px`;
                     confetti.style.opacity = opacity;
+                    confetti.style.transform = `rotate(${rotation}deg)`;
                     
                     if (opacity > 0) {
                         requestAnimationFrame(animateConfetti);
@@ -939,24 +1184,73 @@
             }
         }
         
+        function createModalConfetti() {
+            const colors = ['#ff3366', '#ff9966', '#99ccff', '#cc99ff', '#ffcc00', '#99ff99'];
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = `${Math.random() * 100}vw`;
+                confetti.style.top = `${Math.random() * 100}vh`;
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = `${Math.random() * 20 + 5}px`;
+                confetti.style.height = confetti.style.width;
+                
+                // Random shape
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '0';
+                }
+                
+                document.body.appendChild(confetti);
+                
+                // Animate confetti falling
+                let posY = parseFloat(confetti.style.top);
+                let opacity = 1;
+                
+                const animateConfetti = () => {
+                    posY += 2 + Math.random() * 3;
+                    opacity -= 0.005;
+                    
+                    confetti.style.top = `${posY}px`;
+                    confetti.style.opacity = opacity;
+                    
+                    if (opacity > 0 && posY < window.innerHeight + 50) {
+                        requestAnimationFrame(animateConfetti);
+                    } else {
+                        confetti.remove();
+                    }
+                };
+                
+                // Start animation with random delay
+                setTimeout(() => {
+                    requestAnimationFrame(animateConfetti);
+                }, Math.random() * 1000);
+            }
+        }
+        
         function playOpenSound() {
-            // Create a simple sound for opening the present
+            // Create a more pleasant opening sound
             const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
             
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
-            oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
-            oscillator.frequency.setValueAtTime(783.99, audioContext.currentTime + 0.2); // G5
-            
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.5);
+            // Create multiple oscillators for a chime-like sound
+            for (let i = 0; i < 3; i++) {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+                
+                // Different frequencies for a chord
+                const frequencies = [523.25, 659.25, 783.99]; // C, E, G
+                oscillator.frequency.setValueAtTime(frequencies[i], audioContext.currentTime);
+                
+                gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + 0.1);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1 + i * 0.1);
+                
+                oscillator.start(audioContext.currentTime + i * 0.1);
+                oscillator.stop(audioContext.currentTime + 1.5 + i * 0.1);
+            }
         }
         
         // Scroll animations for love notes
@@ -1025,12 +1319,17 @@
             setTimeout(createFloatingHeart, i * 500);
         }
         
-        // Instructions for personalization
-        console.log("=== INSTRUCTIONS FOR PERSONALIZATION ===");
-        console.log("1. Replace the images in the slideshow with actual photos of Martha");
-        console.log("2. Replace the music source with your actual song for Martha");
-        console.log("3. Customize the messages to make them even more personal");
-        console.log("4. To add your song: Replace the <audio> source with your song file URL");
+        // Add keyboard support for modal
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
+                closeModalFunction();
+            }
+        });
+        
+        console.log("=== BIRTHDAY SURPRISE READY ===");
+        console.log("All images have been updated to use Martha's photos");
+        console.log("Audio file set to: Kirorerwa.mp3");
+        console.log("Gift boxes now open dramatic modals with confetti effects!");
     </script>
 </body>
 </html>
