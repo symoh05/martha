@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>✨ Happy Birthday Martha! ✨ From Simon Ngugi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        /* Premium Background */
+        .premium-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 51, 102, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(102, 51, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 153, 51, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a1a1a 100%);
+            z-index: -2;
+        }
+        
+        .glitter {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+                radial-gradient(1px 1px at 40px 70px, #ff3366, transparent),
+                radial-gradient(2px 2px at 80px 20px, #9933ff, transparent),
+                radial-gradient(1px 1px at 90px 90px, #ffcc00, transparent);
+            background-size: 200px 200px;
+            opacity: 0.3;
+            z-index: -1;
+            animation: twinkle 8s infinite alternate;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 0.4; }
+        }
+        
+        /* Music Gatekeeper Modal */
+        .music-gatekeeper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.98);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .gatekeeper-content {
+            background: linear-gradient(145deg, #1a0a1a, #0a0a1a);
+            border-radius: 25px;
+            padding: 40px 30px;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 
+                0 20px 60px rgba(255, 51, 102, 0.3),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .gatekeeper-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff3366, #9933ff, #ff3366);
+            background-size: 200% 100%;
+            animation: gradientShift 3s infinite linear;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        .gatekeeper-icon {
+            font-size: 5rem;
+            color: #ff3366;
+            margin-bottom: 25px;
+            animation: pulse 2s infinite;
+            text-shadow: 0 0 30px rgba(255, 51, 102, 0.5);
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .gatekeeper-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            background: linear-gradient(to right, #ff3366, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .gatekeeper-message {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .gatekeeper-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5rem;
+            color: #ffcc00;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .music-gate-btn {
+            background: linear-gradient(135deg, #ff3366, #ff6699);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .music-gate-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .music-gate-btn:hover::before {
+            left: 100%;
+        }
+        
+        .music-gate-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .music-note {
+            font-size: 1.5rem;
+            animation: bounceNote 1s infinite alternate;
+        }
+        
+        @keyframes bounceNote {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        
+        /* Main Content */
+        .main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .main-content.visible {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            background: linear-gradient(to right, #ff3366, #ffcc00, #9933ff, #ff3366);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+            text-shadow: 0 0 50px rgba(255, 51, 102, 0.3);
+            animation: gradientShift 6s infinite linear;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 4vw, 1.6rem);
+            color: #fff;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            line-height: 1.6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hero-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+            color: #ffcc00;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        .birthday-stars {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: gold;
+            margin: 25px 0;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .birthday-star {
+            animation: floatStar 4s ease-in-out infinite;
+            text-shadow: 0 0 20px gold;
+        }
+        
+        .birthday-star:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        
+        .birthday-star:nth-child(3) {
+            animation-delay: 1s;
+        }
+        
+        @keyframes floatStar {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        /* Premium Image Gallery with Auto-slide */
+        .gallery-section {
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 3.5rem);
+            text-align: center;
+            background: linear-gradient(to right, #ffcc00, #ff3366);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #ff3366, #ffcc00);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .premium-gallery {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .gallery-slide {
+            width: 100%;
+            height: 70vh;
+            max-height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 20px rgba(255, 255, 255, 0.05);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-slide:hover img {
+            transform: scale(1.05);
+        }
+        
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            color: white;
+            padding: 25px;
+            font-size: 1.3rem;
+            text-align: center;
+            font-weight: 300;
+        }
+        
+        .gallery-nav {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .gallery-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .gallery-btn:hover:not(:disabled) {
+            background: rgba(255, 51, 102, 0.3);
+            border-color: #ff3366;
+            transform: scale(1.1);
+        }
+        
+        .gallery-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .gallery-counter {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            color: #ccc;
+            font-weight: 300;
+        }
+        
+        .auto-slide-control {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .auto-slide-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .auto-slide-toggle:hover {
+            background: rgba(255, 51, 102, 0.3);
+            border-color: #ff3366;
+        }
+        
+        /* Premium Surprise Boxes */
+        .surprise-section {
+            padding: 80px 20px;
+            position: relative;
+        }
+        
+        .surprise-intro {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+            color: #ccc;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .premium-surprise-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .premium-surprise-box {
+            perspective: 1000px;
+            cursor: pointer;
+            height: 320px;
+        }
+        
+        .premium-present-box {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .premium-present-box.opened {
+            transform: rotateY(180deg);
+        }
+        
+        .premium-front, .premium-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        .premium-front {
+            background: linear-gradient(145deg, #1a0a1a, #0a0a1a);
+            color: white;
+            border: 1px solid rgba(255, 51, 102, 0.3);
+            box-shadow: 
+                0 15px 35px rgba(255, 51, 102, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+        }
+        
+        .premium-back {
+            background: linear-gradient(145deg, #0a1a1a, #1a0a1a);
+            color: white;
+            transform: rotateY(180deg);
+            border: 1px solid rgba(102, 51, 255, 0.3);
+            box-shadow: 
+                0 15px 35px rgba(102, 51, 255, 0.2),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+        }
+        
+        .premium-gift-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: premiumBounce 2s infinite;
+            background: linear-gradient(to bottom, #ff3366, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        @keyframes premiumBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+        
+        .premium-question {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+        }
+        
+        .premium-answer {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: center;
+            color: #ccc;
+        }
+        
+        /* FIXED: Premium Modal for Small Screens */
+        .premium-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Changed from center to flex-start */
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            backdrop-filter: blur(10px);
+            padding: 20px; /* Added padding for small screens */
+            overflow-y: auto; /* Allow scrolling if needed */
+        }
+        
+        .premium-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .premium-modal-content {
+            background: linear-gradient(145deg, #1a0a1a, #0a0a1a);
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh; /* Limit height for small screens */
+            border-radius: 25px;
+            padding: 40px 25px 25px; /* Adjusted padding */
+            box-shadow: 
+                0 30px 60px rgba(255, 51, 102, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 40px rgba(255, 255, 255, 0.05);
+            transform: scale(0.8) translateY(50px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            overflow-y: auto; /* Make content scrollable */
+            margin-top: 10vh; /* Position from top */
+            margin-bottom: 20px; /* Space at bottom */
+        }
+        
+        .premium-modal-overlay.active .premium-modal-content {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        
+        .premium-modal-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff3366, #ffcc00, #9933ff);
+            background-size: 200% 100%;
+            animation: gradientShift 3s infinite linear;
+        }
+        
+        .premium-modal-header {
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+            padding: 0 10px;
+        }
+        
+        /* FIXED: Better font for modals */
+        .premium-modal-title {
+            font-family: 'Montserrat', sans-serif; /* Changed to better font */
+            font-size: clamp(1.8rem, 5vw, 2.2rem); /* Responsive font size */
+            background: linear-gradient(to right, #ffcc00, #ff3366);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 15px;
+            font-weight: 600; /* Slightly bolder */
+            line-height: 1.3; /* Better line height */
+        }
+        
+        .premium-modal-body {
+            font-family: 'Poppins', sans-serif; /* Clean readable font */
+            font-size: clamp(1rem, 4vw, 1.2rem); /* Responsive font size - reduced */
+            line-height: 1.6; /* Better readability */
+            color: #e0e0e0; /* Slightly brighter for readability */
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px 15px; /* Adjusted padding */
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow-wrap: break-word; /* Prevent long words from breaking layout */
+            word-break: break-word; /* Break long words */
+        }
+        
+        /* FIXED: Better close button positioning */
+        .close-premium-modal {
+            position: absolute;
+            top: 15px; /* Adjusted for small screens */
+            right: 15px; /* Adjusted for small screens */
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .close-premium-modal:hover {
+            background: rgba(255, 51, 102, 0.4);
+            border-color: #ff3366;
+            transform: rotate(90deg);
+        }
+        
+        /* Love Messages */
+        .love-section {
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-love-messages {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .premium-love-note {
+            background: linear-gradient(145deg, #1a0a1a, #0a0a1a);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 1s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-love-note::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(to right, #ff3366, #ffcc00);
+        }
+        
+        .premium-love-note.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .premium-love-note h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            background: linear-gradient(to right, #ff3366, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        
+        .premium-love-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+        
+        .premium-heart-divider {
+            text-align: center;
+            font-size: 2.5rem;
+            background: linear-gradient(to bottom, #ff3366, #ffcc00);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 30px 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        /* Birthday Wishes */
+        .wishes-section {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-cake-container {
+            font-size: clamp(5rem, 12vw, 8rem);
+            margin: 40px 0;
+            animation: premiumFloat 6s ease-in-out infinite;
+            text-shadow: 
+                0 0 30px rgba(255, 204, 0, 0.5),
+                0 0 60px rgba(255, 51, 102, 0.3);
+        }
+        
+        @keyframes premiumFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg) scale(1);
+                filter: hue-rotate(0deg);
+            }
+            33% { 
+                transform: translateY(-30px) rotate(5deg) scale(1.1);
+                filter: hue-rotate(120deg);
+            }
+            66% { 
+                transform: translateY(15px) rotate(-5deg) scale(0.95);
+                filter: hue-rotate(240deg);
+            }
+        }
+        
+        .premium-birthday-wish {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(3rem, 8vw, 5rem);
+            background: linear-gradient(to right, #ff3366, #ffcc00, #9933ff, #ff3366);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 40px;
+            text-shadow: 0 0 50px rgba(255, 51, 102, 0.3);
+            animation: gradientShift 6s infinite linear;
+        }
+        
+        .premium-wishes-text {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            color: #ccc;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .signature-section {
+            margin-top: 50px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .signature-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .signature-title {
+            font-size: 1.2rem;
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .premium-final-hearts {
+            font-size: 3.5rem;
+            letter-spacing: 25px;
+            margin: 40px 0;
+            background: linear-gradient(to right, #ff3366, #ffcc00, #9933ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Footer */
+        .premium-footer {
+            padding: 50px 20px;
+            text-align: center;
+            background: rgba(10, 10, 10, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #ff3366, #ffcc00, #9933ff, transparent);
+        }
+        
+        .premium-footer-text {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+        
+        .footer-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #ffcc00;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        /* Hidden Audio Player */
+        .hidden-audio {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+            height: 0;
+            width: 0;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            z-index: 9999;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(to right, #ff3366, #ffcc00, #9933ff);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: clamp(2.8rem, 9vw, 4rem);
+            }
+            
+            .premium-gallery {
+                max-height: 50vh;
+            }
+            
+            .gallery-slide {
+                height: 50vh;
+            }
+            
+            .premium-surprise-container {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+            
+            .premium-modal-content {
+                padding: 35px 20px 20px; /* Adjusted for mobile */
+                max-height: 80vh; /* Smaller max height on mobile */
+                margin-top: 5vh; /* Less margin on mobile */
+            }
+            
+            .premium-modal-title {
+                font-size: 1.6rem; /* Smaller on mobile */
+            }
+            
+            .premium-modal-body {
+                font-size: 1rem; /* Smaller on mobile */
+                padding: 15px 10px; /* Less padding on mobile */
+                line-height: 1.5; /* Tighter line height on mobile */
+            }
+            
+            .close-premium-modal {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+                font-size: 1.3rem;
+            }
+            
+            .premium-love-note {
+                padding: 30px 20px;
+            }
+            
+            .premium-love-note h3 {
+                font-size: 2rem;
+            }
+            
+            .premium-wishes-text {
+                font-size: 1.2rem;
+                padding: 25px 20px;
+            }
+            
+            .signature-name {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gatekeeper-content {
+                padding: 30px 20px;
+            }
+            
+            .gatekeeper-title {
+                font-size: 1.8rem;
+            }
+            
+            .music-gate-btn {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .premium-surprise-box {
+                height: 280px;
+            }
+            
+            .premium-modal-content {
+                padding: 30px 15px 15px; /* Even smaller padding */
+                width: 95%; /* Wider on very small screens */
+                max-height: 75vh; /* Smaller height */
+            }
+            
+            .premium-modal-title {
+                font-size: 1.4rem; /* Even smaller */
+                margin-bottom: 10px;
+            }
+            
+            .premium-modal-body {
+                font-size: 0.95rem; /* Even smaller */
+                padding: 12px 8px; /* Minimal padding */
+                line-height: 1.4; /* Compact */
+            }
+            
+            .premium-final-hearts {
+                font-size: 2.5rem;
+                letter-spacing: 15px;
+            }
+            
+            .signature-name {
+                font-size: 1.8rem;
+            }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 360px) {
+            .premium-modal-content {
+                padding: 25px 12px 12px;
+                width: 98%;
+            }
+            
+            .premium-modal-title {
+                font-size: 1.3rem;
+            }
+            
+            .premium-modal-body {
+                font-size: 0.9rem;
+            }
+            
+            .close-premium-modal {
+                top: 8px;
+                right: 8px;
+                width: 30px;
+                height: 30px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #ff3366, #ffcc00);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(to bottom, #ff6699, #ffdd44);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="premium-bg"></div>
+    <div class="glitter"></div>
+    
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
+    <!-- Music Gatekeeper -->
+    <div class="music-gatekeeper" id="musicGatekeeper">
+        <div class="gatekeeper-content">
+            <div class="gatekeeper-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <h1 class="gatekeeper-title">A Musical Surprise Awaits!</h1>
+            <p class="gatekeeper-message">
+                Martha's birthday celebration comes with a special soundtrack!<br>
+                Please play the music to unlock this magical experience.
+            </p>
+            <button class="music-gate-btn" id="musicGateBtn">
+                <span class="music-note">🎵</span>
+                Play Martha's Special Song
+                <span class="music-note">🎶</span>
+            </button>
+            <p class="gatekeeper-signature">Made with love by Simon Ngugi</p>
+        </div>
+    </div>
+    
+    <!-- Hidden Audio Player -->
+    <audio id="birthdaySong" loop preload="auto">
+        <source src="https://symoh05.github.io/martha/kirorerwa.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">Happy Birthday, Martha! ✨</h1>
+                <div class="birthday-stars">
+                    <div class="birthday-star">⭐</div>
+                    <div class="birthday-star">🌟</div>
+                    <div class="birthday-star">💫</div>
+                </div>
+                <p class="hero-subtitle">My beautiful star, today is your special day and I'm the luckiest person in the world to have you in my life. I've never felt with anyone the way I feel with you.</p>
+                <p class="hero-subtitle">This celebration was created just for you, with all my love and admiration.</p>
+                <p class="hero-signature">With all my heart,<br>Simon Ngugi</p>
+            </div>
+        </section>
+        
+        <!-- Premium Image Gallery with Auto-slide -->
+        <section class="gallery-section">
+            <h2 class="section-title">My Radiant Martha</h2>
+            <div class="premium-gallery">
+                <div class="gallery-slide">
+                    <img src="martha1.jpg" alt="Beautiful Martha" id="currentImage">
+                    <div class="image-caption" id="imageCaption">That smile that brightens my world every day</div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-btn" id="prevImage" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="gallery-btn" id="nextImage">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="gallery-counter" id="imageCounter">1 of 5</div>
+                <div class="auto-slide-control">
+                    <button class="auto-slide-toggle" id="autoSlideToggle">
+                        <i class="fas fa-play" id="autoSlideIcon"></i>
+                        <span id="autoSlideText">Auto-slide: ON</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Premium Surprise Boxes -->
+        <section class="surprise-section">
+            <h2 class="section-title">Treasure Boxes of Love</h2>
+            <p class="surprise-intro">Each box holds a secret message from my heart. Open them to discover how incredibly special you are to me!</p>
+            
+            <div class="premium-surprise-container">
+                <!-- Box 1 -->
+                <div class="premium-surprise-box">
+                    <div class="premium-present-box" id="premiumPresent1" data-box="1">
+                        <div class="premium-front">
+                            <div class="premium-gift-icon">🎁</div>
+                            <div class="premium-question">What makes you irreplaceable in my life?</div>
+                            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;"><i>Tap to reveal the secret</i></p>
+                        </div>
+                        <div class="premium-back">
+                            <div class="premium-answer">
+                                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #ffcc00;">Your Unique Soul</h3>
+                                <p>Your beautiful soul makes you irreplaceable...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Box 2 -->
+                <div class="premium-surprise-box">
+                    <div class="premium-present-box" id="premiumPresent2" data-box="2">
+                        <div class="premium-front">
+                            <div class="premium-gift-icon">🎁</div>
+                            <div class="premium-question">Why is our bond so special?</div>
+                            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;"><i>Tap to reveal the secret</i></p>
+                        </div>
+                        <div class="premium-back">
+                            <div class="premium-answer">
+                                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #ffcc00;">Cosmic Connection</h3>
+                                <p>We have a connection that feels cosmic...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Box 3 -->
+                <div class="premium-surprise-box">
+                    <div class="premium-present-box" id="premiumPresent3" data-box="3">
+                        <div class="premium-front">
+                            <div class="premium-gift-icon">🎁</div>
+                            <div class="premium-question">What do I wish for your birthday?</div>
+                            <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;"><i>Tap to reveal the secret</i></p>
+                        </div>
+                        <div class="premium-back">
+                            <div class="premium-answer">
+                                <h3 style="font-size: 1.4rem; margin-bottom: 15px; color: #ffcc00;">Endless Magic</h3>
+                                <p>I wish for endless magic in your life...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Premium Modal for Surprise Boxes - FIXED FOR SMALL SCREENS -->
+        <div class="premium-modal-overlay" id="premiumModalOverlay">
+            <div class="premium-modal-content">
+                <button class="close-premium-modal" id="closePremiumModal">&times;</button>
+                <div class="premium-modal-header">
+                    <h2 id="premiumModalTitle">Your Special Message</h2>
+                </div>
+                <div class="premium-modal-body" id="premiumModalBody">
+                    <!-- Content will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Love Messages -->
+        <section class="love-section">
+            <h2 class="section-title">Whispers from My Heart</h2>
+            <div class="premium-love-messages">
+                <div class="premium-love-note fade-in">
+                    <h3>My Dearest Martha</h3>
+                    <p class="premium-love-text">From the moment you entered my life, the entire universe seemed to realign itself. Colors gained new vibrancy, laughter found deeper meaning, and every sunrise became a promise of another beautiful day with you.</p>
+                    <p class="premium-love-text">You are the most exquisite soul I've ever encountered - a perfect blend of grace, wisdom, and radiant beauty that illuminates every space you enter.</p>
+                </div>
+                
+                <div class="premium-heart-divider">💖</div>
+                
+                <div class="premium-love-note fade-in">
+                    <h3>My Eternal Promise</h3>
+                    <p class="premium-love-text">I pledge to cherish every breath we share, to celebrate your dreams as if they were my own, to be your sanctuary in storms and your companion in sunshine.</p>
+                    <p class="premium-love-text">I promise my love will grow with each passing season, becoming deeper, stronger, and more beautiful - just like you.</p>
+                </div>
+                
+                <div class="premium-heart-divider">💖</div>
+                
+                <div class="premium-love-note fade-in">
+                    <h3>My Guiding Star</h3>
+                    <p class="premium-love-text">You are my celestial navigation, the constant light that guides me through life's complexities. With you as my partner, I feel invincible - ready to conquer any challenge life presents.</p>
+                    <p class="premium-love-text">Thank you for your unwavering strength, your brilliant mind, your infectious laughter, and your magnificent heart. I am eternally grateful that destiny brought you to me.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Birthday Wishes -->
+        <section class="wishes-section">
+            <h2 class="section-title">Birthday Benedictions</h2>
+            <div class="premium-cake-container">
+                🎂 🎉 ✨ 🥳
+            </div>
+            <h3 class="premium-birthday-wish">Happy Turnings, My Eternal Love!</h3>
+            <p class="premium-wishes-text">May this new chapter of your life overflow with enchantment, adventure, and dreams materializing before your eyes. May you always carry the certainty of being profoundly loved and cherished.</p>
+            <p class="premium-wishes-text">I eagerly anticipate celebrating all your future birthdays with you, weaving a tapestry of memories that will glow eternally in our hearts.</p>
+            
+            <div class="signature-section">
+                <div class="signature-name">Simon Ngugi</div>
+                <div class="signature-title">Your loving partner, admirer, and biggest fan</div>
+            </div>
+            
+            <div class="premium-final-hearts">
+                💖 💖 💖
+            </div>
+            
+            <p style="font-size: 1.5rem; color: #ffcc00; margin-top: 40px; font-family: 'Dancing Script', cursive;">
+                Created with all my love, just for you
+            </p>
+        </section>
+        
+        <!-- Premium Footer -->
+        <footer class="premium-footer">
+            <p class="premium-footer-text">A celestial birthday experience crafted with infinite love for Martha</p>
+            <p class="premium-footer-text">Every element, every word, every moment designed to celebrate you</p>
+            <div class="footer-signature">From Simon Ngugi, with all my heart</div>
+        </footer>
+    </div>
+
+    <script>
+        // Premium Music Gatekeeper
+        document.addEventListener('DOMContentLoaded', function() {
+            const musicGatekeeper = document.getElementById('musicGatekeeper');
+            const musicGateBtn = document.getElementById('musicGateBtn');
+            const mainContent = document.getElementById('mainContent');
+            const birthdaySong = document.getElementById('birthdaySong');
+            const progressBar = document.getElementById('progressBar');
+            
+            let musicStarted = false;
+            let isPlaying = false;
+            
+            // Set audio to loop and prevent user controls
+            birthdaySong.loop = true;
+            birthdaySong.controls = false;
+            
+            // Hide default audio controls
+            birthdaySong.style.display = 'none';
+            
+            // FIXED: Enable background audio playback
+            // Set up service worker-like behavior for background playback
+            if ('mediaSession' in navigator) {
+                navigator.mediaSession.setActionHandler('play', function() {
+                    birthdaySong.play();
+                });
+                navigator.mediaSession.setActionHandler('pause', function() {
+                    // Don't allow pausing - music must continue
+                    birthdaySong.play();
+                });
+                navigator.mediaSession.setActionHandler('stop', function() {
+                    // Don't allow stopping
+                    birthdaySong.play();
+                });
+            }
+            
+            // Prevent screen from sleeping while music plays
+            let wakeLock = null;
+            async function requestWakeLock() {
+                try {
+                    if ('wakeLock' in navigator) {
+                        wakeLock = await navigator.wakeLock.request('screen');
+                        console.log('Wake Lock is active to prevent screen sleep');
+                    }
+                } catch (err) {
+                    console.log(`${err.name}, ${err.message}`);
+                }
+            }
+            
+            // When music gate button is clicked
+            musicGateBtn.addEventListener('click', function() {
+                if (!musicStarted) {
+                    // Start playing music
+                    birthdaySong.volume = 0.7;
+                    
+                    const playPromise = birthdaySong.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            musicStarted = true;
+                            isPlaying = true;
+                            
+                            // Request wake lock to prevent screen sleep
+                            requestWakeLock();
+                            
+                            // Hide gatekeeper with animation
+                            musicGatekeeper.style.opacity = '0';
+                            setTimeout(() => {
+                                musicGatekeeper.style.display = 'none';
+                                
+                                // Show main content with animation
+                                mainContent.classList.add('visible');
+                                
+                                // Start progress bar
+                                updateProgressBar();
+                                
+                                // Start floating hearts
+                                startFloatingHearts();
+                                
+                                // Start image auto-slide
+                                startAutoSlide();
+                                
+                            }, 500);
+                            
+                        }).catch(error => {
+                            console.log("Music play failed:", error);
+                            musicGateBtn.innerHTML = '<span class="music-note">⚠️</span> Tap to Play <span class="music-note">⚠️</span>';
+                            musicGateBtn.style.background = '#ff9900';
+                            
+                            alert("Please tap the play button again. Some devices require this.");
+                        });
+                    }
+                }
+            });
+            
+            // FIXED: Image Auto-Slide Functionality
+            const images = ['martha1.jpg', 'martha2.jpg', 'martha3.jpg', 'martha4.jpg', 'martha5.jpg'];
+            const captions = [
+                "That smile that brightens my world every day",
+                "Your joyful laughter is my favorite melody",
+                "The depth of your compassion inspires me endlessly",
+                "Every adventure with you feels like magic",
+                "You shine brighter than any constellation"
+            ];
+            
+            let currentImageIndex = 0;
+            let autoSlideInterval = null;
+            let autoSlideEnabled = true;
+            const autoSlideToggle = document.getElementById('autoSlideToggle');
+            const autoSlideIcon = document.getElementById('autoSlideIcon');
+            const autoSlideText = document.getElementById('autoSlideText');
+            
+            const currentImage = document.getElementById('currentImage');
+            const imageCaption = document.getElementById('imageCaption');
+            const prevImageBtn = document.getElementById('prevImage');
+            const nextImageBtn = document.getElementById('nextImage');
+            const imageCounter = document.getElementById('imageCounter');
+            
+            function updateImage() {
+                currentImage.src = images[currentImageIndex];
+                imageCaption.textContent = captions[currentImageIndex];
+                imageCounter.textContent = `${currentImageIndex + 1} of ${images.length}`;
+                
+                // Update button states
+                prevImageBtn.disabled = currentImageIndex === 0;
+                nextImageBtn.disabled = currentImageIndex === images.length - 1;
+                
+                // Add loading effect
+                currentImage.style.opacity = '0.7';
+                setTimeout(() => {
+                    currentImage.style.opacity = '1';
+                }, 300);
+            }
+            
+            function nextImage() {
+                if (currentImageIndex < images.length - 1) {
+                    currentImageIndex++;
+                } else {
+                    currentImageIndex = 0; // Loop back to first image
+                }
+                updateImage();
+            }
+            
+            function prevImage() {
+                if (currentImageIndex > 0) {
+                    currentImageIndex--;
+                } else {
+                    currentImageIndex = images.length - 1; // Loop to last image
+                }
+                updateImage();
+            }
+            
+            function startAutoSlide() {
+                if (autoSlideEnabled && !autoSlideInterval) {
+                    autoSlideInterval = setInterval(nextImage, 5000); // Change image every 5 seconds
+                    autoSlideIcon.className = 'fas fa-pause';
+                    autoSlideText.textContent = 'Auto-slide: ON';
+                }
+            }
+            
+            function stopAutoSlide() {
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                    autoSlideInterval = null;
+                    autoSlideIcon.className = 'fas fa-play';
+                    autoSlideText.textContent = 'Auto-slide: OFF';
+                }
+            }
+            
+            function toggleAutoSlide() {
+                autoSlideEnabled = !autoSlideEnabled;
+                if (autoSlideEnabled) {
+                    startAutoSlide();
+                } else {
+                    stopAutoSlide();
+                }
+            }
+            
+            // Event listeners for image navigation
+            prevImageBtn.addEventListener('click', function() {
+                prevImage();
+                if (autoSlideEnabled) {
+                    // Restart auto-slide timer
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            });
+            
+            nextImageBtn.addEventListener('click', function() {
+                nextImage();
+                if (autoSlideEnabled) {
+                    // Restart auto-slide timer
+                    stopAutoSlide();
+                    startAutoSlide();
+                }
+            });
+            
+            autoSlideToggle.addEventListener('click', toggleAutoSlide);
+            
+            // Initialize image carousel
+            updateImage();
+            startAutoSlide();
+            
+            // Swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            currentImage.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                // Pause auto-slide during interaction
+                if (autoSlideEnabled) {
+                    stopAutoSlide();
+                }
+            });
+            
+            currentImage.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+                // Restart auto-slide after interaction
+                if (autoSlideEnabled) {
+                    setTimeout(startAutoSlide, 3000);
+                }
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    // Swipe left - next image
+                    nextImage();
+                }
+                
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    // Swipe right - previous image
+                    prevImage();
+                }
+            }
+            
+            // Update progress bar based on scroll
+            function updateProgressBar() {
+                window.addEventListener('scroll', function() {
+                    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                    const scrolled = (winScroll / height) * 100;
+                    progressBar.style.width = scrolled + "%";
+                });
+            }
+            
+            // Premium surprise boxes with modal functionality
+            const premiumPresents = document.querySelectorAll('.premium-present-box');
+            const premiumModalOverlay = document.getElementById('premiumModalOverlay');
+            const closePremiumModal = document.getElementById('closePremiumModal');
+            const premiumModalTitle = document.getElementById('premiumModalTitle');
+            const premiumModalBody = document.getElementById('premiumModalBody');
+            
+            // Premium content for each gift box modal
+            const premiumBoxContents = {
+                1: {
+                    title: "Your Irreplaceable Soul",
+                    content: `What makes you absolutely irreplaceable in my life is the unique constellation of qualities that form your beautiful soul. Your kindness isn't just an action—it's who you are at your core. Your compassion flows naturally, touching everyone around you with its gentle warmth.<br><br>
+                    <span style="color: #ffcc00; font-weight: 600;">Your laughter</span> is my favorite symphony, a sound that can instantly transform any moment into pure joy. <span style="color: #ffcc00; font-weight: 600;">Your wisdom</span> guides me, <span style="color: #ffcc00; font-weight: 600;">your strength</span> inspires me, and <span style="color: #ffcc00; font-weight: 600;">your love</span> completes me.<br><br>
+                    You're not just my girlfriend; you're my muse, my sanctuary, and my greatest life's blessing.`
+                },
+                2: {
+                    title: "Our Cosmic Connection",
+                    content: `Our bond feels like something written in the stars—a connection so profound that I've never experienced anything like it with anyone else. It's as if our souls recognized each other from the very beginning.<br><br>
+                    <span style="color: #ffcc00; font-weight: 600;">What makes us special</span> is how we communicate without words, how we understand each other's silences, and how we fit together perfectly despite our differences.<br><br>
+                    With you, I've discovered a love that feels like home—a safe harbor where I can be completely myself. Every moment with you feels significant, like we're exactly where we're meant to be, together.`
+                },
+                3: {
+                    title: "Endless Magic for You",
+                    content: `My birthday wish for you, my beautiful star, is to enjoy all your birthdays as we share our incredible journey together. I wish for you to wake up every morning with wonder in your heart and excitement for the day ahead.<br><br>
+                    <span style="color: #ffcc00; font-weight: 600;">May this year bring you:</span><br>
+                    • Endless joy that multiplies with each sunrise<br>
+                    • Success beyond your wildest dreams<br>
+                    • Adventures that become cherished memories<br>
+                    • Laughter that echoes through your days<br>
+                    • Love that grows deeper with time<br><br>
+                    Here's to celebrating countless more birthdays together, building a lifetime of beautiful moments side by side!`
+                }
+            };
+            
+            premiumPresents.forEach(present => {
+                present.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const boxNumber = this.getAttribute('data-box');
+                    
+                    // Create premium confetti effect
+                    createPremiumConfetti(this);
+                    
+                    // Toggle the opened class for the gift box
+                    this.classList.toggle('opened');
+                    
+                    // Play premium opening sound
+                    playPremiumSound();
+                    
+                    // Show the premium modal with content after a short delay
+                    setTimeout(() => {
+                        showPremiumModal(boxNumber);
+                    }, 800);
+                });
+            });
+            
+            function showPremiumModal(boxNumber) {
+                // Set modal content based on box number
+                premiumModalTitle.textContent = premiumBoxContents[boxNumber].title;
+                premiumModalBody.innerHTML = premiumBoxContents[boxNumber].content;
+                
+                // Show modal with animation
+                premiumModalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Create premium confetti for modal opening
+                createModalConfetti();
+            }
+            
+            // Close premium modal
+            closePremiumModal.addEventListener('click', function() {
+                closePremiumModalFunction();
+            });
+            
+            premiumModalOverlay.addEventListener('click', function(e) {
+                if (e.target === premiumModalOverlay) {
+                    closePremiumModalFunction();
+                }
+            });
+            
+            function closePremiumModalFunction() {
+                premiumModalOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Reset all gift boxes to closed state after a delay
+                setTimeout(() => {
+                    premiumPresents.forEach(present => {
+                        present.classList.remove('opened');
+                    });
+                }, 300);
+            }
+            
+            function createPremiumConfetti(element) {
+                const rect = element.getBoundingClientRect();
+                const colors = ['#ff3366', '#ffcc00', '#9933ff', '#00ccff', '#ff6699', '#66ff99'];
+                
+                for (let i = 0; i < 60; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${rect.left + rect.width / 2}px`;
+                    confetti.style.top = `${rect.top + rect.height / 2}px`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${Math.random() * 15 + 5}px`;
+                    confetti.style.height = confetti.style.width;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Animate confetti
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = 3 + Math.random() * 4;
+                    const vx = Math.cos(angle) * velocity;
+                    const vy = Math.sin(angle) * velocity;
+                    
+                    let posX = rect.left + rect.width / 2;
+                    let posY = rect.top + rect.height / 2;
+                    let opacity = 1;
+                    let rotation = 0;
+                    const rotationSpeed = Math.random() * 10 - 5;
+                    
+                    const animateConfetti = () => {
+                        posX += vx;
+                        posY += vy;
+                        opacity -= 0.015;
+                        rotation += rotationSpeed;
+                        
+                        confetti.style.left = `${posX}px`;
+                        confetti.style.top = `${posY}px`;
+                        confetti.style.opacity = opacity;
+                        confetti.style.transform = `rotate(${rotation}deg)`;
+                        
+                        if (opacity > 0) {
+                            requestAnimationFrame(animateConfetti);
+                        } else {
+                            confetti.remove();
+                        }
+                    };
+                    
+                    requestAnimationFrame(animateConfetti);
+                }
+            }
+            
+            function createModalConfetti() {
+                const colors = ['#ff3366', '#ffcc00', '#9933ff', '#00ccff'];
+                
+                for (let i = 0; i < 80; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.top = `${Math.random() * 20}vh`;
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = `${Math.random() * 15 + 5}px`;
+                    confetti.style.height = confetti.style.width;
+                    
+                    document.body.appendChild(confetti);
+                    
+                    // Animate confetti falling
+                    let posY = parseFloat(confetti.style.top);
+                    let opacity = 1;
+                    
+                    const animateConfetti = () => {
+                        posY += 1 + Math.random() * 2;
+                        opacity -= 0.006;
+                        
+                        confetti.style.top = `${posY}px`;
+                        confetti.style.opacity = opacity;
+                        
+                        if (opacity > 0 && posY < window.innerHeight + 50) {
+                            requestAnimationFrame(animateConfetti);
+                        } else {
+                            confetti.remove();
+                        }
+                    };
+                    
+                    setTimeout(() => {
+                        requestAnimationFrame(animateConfetti);
+                    }, Math.random() * 800);
+                }
+            }
+            
+            function playPremiumSound() {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    for (let i = 0; i < 3; i++) {
+                        const oscillator = audioContext.createOscillator();
+                        const gainNode = audioContext.createGain();
+                        
+                        oscillator.connect(gainNode);
+                        gainNode.connect(audioContext.destination);
+                        
+                        const frequencies = [523.25, 659.25, 783.99];
+                        oscillator.frequency.setValueAtTime(frequencies[i], audioContext.currentTime);
+                        
+                        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+                        gainNode.gain.linearRampToValueAtTime(0.12, audioContext.currentTime + 0.1);
+                        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 1.5 + i * 0.2);
+                        
+                        oscillator.type = 'sine';
+                        oscillator.start(audioContext.currentTime + i * 0.1);
+                        oscillator.stop(audioContext.currentTime + 2 + i * 0.1);
+                    }
+                } catch (e) {
+                    console.log("Premium sound not supported");
+                }
+            }
+            
+            // Scroll animations for love notes
+            const loveNotes = document.querySelectorAll('.premium-love-note');
+            
+            function checkScroll() {
+                loveNotes.forEach(note => {
+                    const noteTop = note.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (noteTop < windowHeight * 0.85) {
+                        note.classList.add('visible');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', checkScroll);
+            window.addEventListener('load', checkScroll);
+            
+            // Create premium floating hearts
+            function startFloatingHearts() {
+                function createFloatingHeart() {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💖';
+                    heart.style.position = 'fixed';
+                    heart.style.fontSize = Math.random() * 25 + 15 + 'px';
+                    heart.style.color = '#ff3366';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.opacity = Math.random() * 0.3 + 0.2;
+                    heart.style.zIndex = '-1';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.filter = `blur(${Math.random() * 2}px) drop-shadow(0 0 8px rgba(255, 51, 102, 0.5))`;
+                    heart.style.textShadow = '0 0 15px currentColor';
+                    document.body.appendChild(heart);
+                    
+                    const animation = heart.animate([
+                        { transform: 'translateY(0) rotate(0deg) scale(1)', opacity: heart.style.opacity },
+                        { transform: `translateY(-${window.innerHeight + 150}px) rotate(${Math.random() * 360}deg) scale(${0.5 + Math.random() * 0.5})`, opacity: 0 }
+                    ], {
+                        duration: Math.random() * 5000 + 3000,
+                        easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                    });
+                    
+                    animation.onfinish = () => {
+                        heart.remove();
+                    };
+                }
+                
+                setInterval(createFloatingHeart, 2000);
+                
+                for (let i = 0; i < 10; i++) {
+                    setTimeout(createFloatingHeart, i * 300);
+                }
+            }
+            
+            // Prevent audio controls
+            birthdaySong.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+                return false;
+            });
+            
+            // Prevent keyboard shortcuts for audio control
+            document.addEventListener('keydown', function(e) {
+                if (e.code === 'Space' && e.target.tagName !== 'BUTTON' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+                    e.preventDefault();
+                }
+                
+                if (e.code === 'MediaPlayPause' || e.code === 'MediaStop' || e.code === 'MediaTrackNext' || e.code === 'MediaTrackPrevious') {
+                    e.preventDefault();
+                }
+                
+                if (e.key === 'Escape' && premiumModalOverlay.classList.contains('active')) {
+                    closePremiumModalFunction();
+                }
+            });
+            
+            // Disable audio element's native controls completely
+            Object.defineProperty(birthdaySong, 'controls', {
+                get: function() { return false; },
+                set: function() { return false; }
+            });
+            
+            // FIXED: Keep music playing when screen sleeps
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden && isPlaying) {
+                    // Screen went to sleep, ensure music continues
+                    birthdaySong.play().catch(e => {
+                        console.log("Background playback issue:", e);
+                    });
+                }
+            });
+            
+            // Handle page becoming visible again
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden && isPlaying) {
+                    birthdaySong.play().catch(e => {
+                        console.log("Resume playback issue:", e);
+                    });
+                }
+            });
+            
+            console.log("=== SIMON NGUGI'S BIRTHDAY SURPRISE FOR MARTHA ===");
+            console.log("• Music gatekeeper activated");
+            console.log("• Image auto-slide enabled (5 seconds)");
+            console.log("• Modal responsiveness fixed for all screen sizes");
+            console.log("• Background music will continue playing");
+            console.log("• Created with love by Simon Ngugi");
+        });
+    </script>
+</body>
+</html>
